@@ -79,6 +79,9 @@
                         @endforeach
                     </tbody>
                 </table>
+                <p>
+                    <strong>Importe total a pagar: </strong>{{ auth()->user()->cart->total }}                
+                </p>
                     <div class="text-center">
                         <form method="POST" action="{{ url('/order') }}">
                             {{ csrf_field() }}
