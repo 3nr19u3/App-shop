@@ -29,7 +29,7 @@
 
                                     <div class="input-group">
 										<span class="input-group-addon">
-											<i class="material-icons">face</i>
+											<i class="material-icons notranslate">face</i>
 										</span>
 										<input type="text" class="form-control" placeholder="Nombres" 
                                         name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -37,7 +37,7 @@
 
 									<div class="input-group">
 										<span class="input-group-addon">
-											<i class="material-icons">email</i>
+											<i class="material-icons notranslate">email</i>
 										</span>
 										<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" 
                                         value="{{ old('email') }}" placeholder="Correo Electronico" required autocomplete="email" autofocus>
@@ -45,7 +45,7 @@
 
 									<div class="input-group">
 										<span class="input-group-addon">
-											<i class="material-icons">lock_outline</i>
+											<i class="material-icons notranslate">lock_outline</i>
 										</span>
 										<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" 
                                         name="password" required autocomplete="current-password" placeholder="Contraseña" />
@@ -53,7 +53,7 @@
 
                                     <div class="input-group">
 										<span class="input-group-addon">
-											<i class="material-icons">lock_outline</i>
+											<i class="material-icons notranslate">lock_outline</i>
 										</span>
 										<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" 
                                         name="password_confirmation" required autocomplete="current-password" placeholder="Confirmar contraseña" />
