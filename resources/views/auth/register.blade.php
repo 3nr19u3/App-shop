@@ -8,6 +8,15 @@
 				<div class="row">
 					<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
 						<div class="card card-signup">
+							@if ($errors->any())
+								<div class="alert alert-danger">
+									<ul>
+										@foreach ($errors->all() as $error)
+										<li>{{$error}}</li>
+										@endforeach
+									</ul>
+								</div>
+							@endif
 							<form method="POST" action="{{ route('register') }}">
                             @csrf
 								<div class="header header-primary text-center">
@@ -32,7 +41,15 @@
 											<i class="material-icons notranslate">face</i>
 										</span>
 										<input type="text" class="form-control" placeholder="Nombres" 
-                                        name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                        name="name" value="{{ old('name', $name) }}" required autocomplete="name" autofocus>
+									</div>
+
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons notranslate">fingerprint</i>
+										</span>
+										<input type="text" class="form-control" placeholder="Username" 
+                                        name="username" required>
 									</div>
 
 									<div class="input-group">
@@ -40,9 +57,24 @@
 											<i class="material-icons notranslate">email</i>
 										</span>
 										<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" 
-                                        value="{{ old('email') }}" placeholder="Correo Electronico" required autocomplete="email" autofocus>
+                                        value="{{ old('email', $email) }}" placeholder="Correo Electronico" autocomplete="email" autofocus>
 									</div>
 
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons notranslate">phone</i>
+										</span>
+										<input id="phone" type="phone" class="form-control @error('email') is-invalid @enderror" name="phone" 
+                                        value="{{ old('phone') }}" placeholder="Telefono" required autofocus>
+									</div>
+
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons notranslate">class</i>
+										</span>
+										<input id="address" type="text" class="form-control @error('email') is-invalid @enderror" name="address" 
+                                        value="{{ old('address') }}" placeholder="Direccion" required autofocus>
+									</div>
 									<div class="input-group">
 										<span class="input-group-addon">
 											<i class="material-icons notranslate">lock_outline</i>

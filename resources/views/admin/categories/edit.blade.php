@@ -12,7 +12,7 @@
     <div class="container">
 
         <div class="section">
-            <h2 class="title text-center">Editar Ctegoria Seleccionada</h2>
+            <h2 class="title text-center">Editar Categoria Seleccionada</h2>
                     @if($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -22,7 +22,7 @@
                             </ul>               
                         </div>
                     @endif
-                <form method="POST" action="{{ url('/admin/categories/'.$category->id.'/edit') }}">
+                <form method="POST" action="{{ url('/admin/categories/'.$category->id.'/edit') }}" enctype="multipart/form-data">
                  {{ csrf_field() }}
                 <div class="row">
                     <div class="col-sm-6">
@@ -30,6 +30,15 @@
                             <label class="control-label">Nombre de la categoria</label>
                             <input type="text" class="form-control" name="name" value="{{ old('name', $category->name) }}">
                         </div>
+                    </div>
+                    <div class="col-sm-6">                      
+                        <label class="control-label">Imagen de la categoria</label>
+                        <input type="file" name="image">
+                        @if ($category->image)
+                        <p class="help-block">Subir una nueva imagen solo si desea reemplazar la 
+                            <a href="{{ asset('/images/categories/'.$category->image) }}" target="_blank">imagen actual</a>
+                        </p>
+                        @endif
                     </div>
                 </div>
                 
